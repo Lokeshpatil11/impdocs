@@ -1,0 +1,53 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { LoginPageComponent } from './login-page/login-page.component'; { RegisterPageComponent } from './register-page/register-page.component';
+import { UserPageComponent } from './user-page/user-page.component';
+const routes: Routes = [
+{ path:'', component:LoginPageComponent },
+{path:'register', component : RegisterPageComponent},
+];
+@NgModule({
+imports: [RouterModule.forRoot(routes)],
+exports: [RouterModule]
+})
+export class AppRoutingModule { }
+app.component.html
+<nav class="nav justify-content-center">
+<a class="nav-link active" aria-current="page" href="/">Login /a>
+<a class="nav-link" href="/register">Register /a>
+/nav>
+<router-outlet> /router-outlet>
+login-page.component.html
+<div class="container">
+<Strong>Login here /Strong><br >
+<form (ngSubmit)="onSubmit()">
+<input class="form form-control" type="text" placeholder="Enter Email Here" ><br >
+<input class="form form-control" type="password" placeholder="Enter Password Here" >
+<br >
+<button type="submit" class="btn btn-primary">Submit /button>&nbsp;
+<button type="reset" class="btn btn-danger">Reset /button>
+/form>
+/div>
+register-page.component.html
+<div class="container">
+Register Page
+Aim:- Create an Angular application which will do following actions: Register User, 
+Login User, Show User Data on Profile Component
+Assignment 2 (C)
+<br >
+<form>
+<label>Enter User Name /label>
+<input class="form form-control" type="text" placeholder="Enter User Name Here"
+><br >
+<label>Enter Email /label>
+<input class="form form-control" type="text" placeholder="Enter Email Here" ><br >
+<label>Enter Password /label>
+<input class="form form-control" type="password" placeholder="Enter Password Here"
+><br >
+<label>Confirm Password /label>
+<input class="form form-control" type="password" placeholder="Confirm Password Here"
+><br >
+<button type="submit" class="btn btn-primary">Submit /button>&nbsp;
+<button type="reset" class="btn btn-danger">Reset /button>
+/form>
+/div
