@@ -1,0 +1,17 @@
+name: Notify Testing Utility
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger testing-utility workflow
+        run: |
+          curl -X POST https://api.github.com/repos/Lokeshpatil11/Lab-5/dispatches \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: token ${{ secrets.REPO_ACCESS_TOKEN }}" \
+            -d '{"event_type": "run-tests", "client_payload": {"triggered_by": "account-service"}}'
